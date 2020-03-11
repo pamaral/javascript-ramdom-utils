@@ -23,9 +23,9 @@ function runUpgrade()
       error: function () {
         try {
           if(!window.mySsoLoginWindow || window.mySsoLoginWindow.closed)
-            window.amaral = window.open();
+            window.mySsoLoginWindow = window.open();
           
-          window.amaral.location = "?func=llworkspace";
+          window.mySsoLoginWindow.location = "?func=llworkspace";
         } catch (e) {}
         setTimeout(function () {try {window.mySsoLoginWindow.close();} catch (e) {} runUpgrade();}, 5000)
       }
